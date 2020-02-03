@@ -1,0 +1,43 @@
+"""
+Erlang https://elixir-lang.org/
+Homebrew https://brew.sh/
+Erlang installation
+Update your homebrew to latest: brew update
+Run: brew install elixir
+
+ISSUE:
+"{"init terminating in do_boot",{undef,[{elixir,start_cli,[],[]},{init,start_it,1,[]},{init,start_em,1,[]}]}}"
+http://www.marcusoft.net/2015/06/getting-elixir-to-run-on-my-osx.html
+https://github.com/elixir-lang/elixir/issues/2911
+--> sudo chmod -R 777 /usr/local/lib/erlang.
+or reinstall erlang 
+
+
+filename: .ex or .exs
+- Use .ex and compile code (most of the time) 
+- most use cases of .exs files are to execute code immediately when called
+- Use .exs if using scripts or tests
+- .ex files as being used for your application's main business logic.
+
+"""
+
+functional, concurrent, general-purpose programming language that runs on Erlang.
+
+Creator: Jose Valim 
+- aimed to create a programming language for large-scale sites and apps
+- used the best features of Ruby, Erlang, and Clojure to develop a high-concurrency and low-latency language
+- designed to handle large data volumes
+- in telecommunication, eCommerce, and finance industries
+
+Projects/Frameworks around Elixir:
+- Mix: build automation tool for creating Elixir projects, dependencies management
+- Phoenix: web development framework which implements server-side MVC pattern
+- Nerves: platform, framework and tooling environment for building embedded system/devices
+- Ecto: database wrapper and query generator
+
+iEx 
+- The Elixir shell
+- interactive shell used for evaluation, debugging and introspection of runtime system
+
+
+
