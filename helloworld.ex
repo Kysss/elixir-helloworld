@@ -9,12 +9,16 @@
 defmodule M do
 
   def main do
-     ##name = IO.gets("What's your name?") |> String.trim ##for trimming off the new line
+     ##name = IO.gets("What's your name?") |> String.trim 
+     ##the pipe is for trimming off the new line
      ##IO.puts("Hey there #{name}")
     data_stuff()
     do_math_stuff()
     compare_stuff()
     check_tuple()
+    list_stuff()
+    map_stuff()
+    pattern_matching_stuff()
   end
 
   def data_stuff do
@@ -132,7 +136,97 @@ defmodule M do
 
     {weight, height, name} = { 175, 6.25, "YY"}
     IO.puts "Weight : #{weight}"
-
+    
   end
+
+
+  def list_stuff do
+    list1 =[1,2,3]
+    list2 =[4,5,6]
+    ## combine 2 lists
+    list3 = list1++list2
+
+    ## subtract a list from a list
+    list4 = list3--list1
+
+    ## this checks whether an element is inside of a list
+    IO.puts 6 in list4
+
+    ## extract out the first element and the rest of the element
+    [head|tail] = list3
+    IO.puts "Head : #{head}"
+
+    ## alternative way of puts, except that this doesn't output a new line
+    IO.write "Tail : "
+    ##IO.inspect tail
+
+    ## this will print out 'ab''
+    IO.inspect [97,98]
+
+    ## ?????
+    IO.inspect [97,98], charlists: :aslists
+
+    ## iterate through each item
+    Enum.each tail, fn item ->
+      IO.puts item
+    end
+
+    words = ["Random","Words","in a ", "list"]
+    Enum.each words, fn word ->
+      IO.puts word
+    end
+
+     #display_list(words)
+     # delete element
+     IO.puts display_list(List.delete(words, "Random"))
+     # delete by index
+     IO.puts display_list(List.delete_at(words, 1))
+
+     IO.puts display_list(List.insert_at(words, 4, "yeah"))
+     IO.puts List.first(words)
+     IO.puts List.last(words)
+
+     my_stats = [name: "YY", height: 2.2]
+  
+  end
+
+  ## prolog
+  def display_list ([word|words]) do
+      IO.puts word
+      display_list(words)
+  end
+
+  ## base case : do nothing
+  def display_list([]), do: nil
+
+
+  def map_stuff do
+
+    capitals = %{"Alabama" => "Montgomery",
+    "Alaska" => "Juneau", "Arizona" => "Phoenix"}
+
+    IO.puts "Captaial of Alaska is #{capitals["Alaska"]}"
+
+    ## or, use atoms as keys
+    capitals2 = %{ alabama: "Montgomery",
+    alaska: "Juneau", arizona: "Phoenix"}
+
+    IO.puts "Captaial of Arizona is #{capitals2.arizona}"
+    
+    capitals3 = Dict.put_new(capitals, "Arkansas", "Little Rock")
+  
+  end
+
+  def pattern_matching_stuff do
+    ###39:38
+  end
+
+
+
+
+
+
 end
+
+
 
